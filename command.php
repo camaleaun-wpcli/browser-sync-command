@@ -25,7 +25,7 @@ class Browser_Sync_Command extends WP_CLI_Command {
 			'watch'     => true,
 			'ghostMode' => false,
 			'files'     => array(
-				getcwd() . '/assets/scss/*.scss',
+				getcwd() . '/**/*.css',
 				getcwd() . '/**/*.php',
 			)
 		);
@@ -52,7 +52,7 @@ class Browser_Sync_Command extends WP_CLI_Command {
 
 		file_put_contents(
 			$file,
-			'module.exports = ' . wp_json_encode( $bs_config, JSON_PRETTY_PRINT + JSON_UNESCAPED_UNICODE ) . "\n"
+			'module.exports = ' . wp_json_encode( $bs_config ) . "\n"
 		);
 
 		$cmd = "browser-sync start --config $file";
