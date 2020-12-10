@@ -18,13 +18,14 @@ class Browser_Sync_Command extends WP_CLI_Command {
 		$homedir = WP_CLI\Utils\get_home_dir();
 
 		$bs_config = array(
-			'proxy'     => "https://$domain",
-			'host'      => $domain,
-			'open'      => 'external',
-			'ui'        => false,
-			'watch'     => true,
-			'ghostMode' => false,
-			'files'     => array(
+			'proxy'         => "https://$domain",
+			'host'          => $domain,
+			'open'          => false,
+			'ui'            => false,
+			'watch'         => true,
+			'ghostMode'     => false,
+			// 'injectChanges' => false,
+			'files'         => array(
 				getcwd() . '/**/*.css',
 				getcwd() . '/**/*.php',
 			)
